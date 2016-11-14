@@ -234,6 +234,12 @@
       }
       mouseWheel = false;
     });
+
+    document.addEventListener('mouseout', function (evt) {
+      if (evt.toElement == null && evt.relatedTarget == null) {
+        create_log();
+      }
+    })
   });
 
   //https://raw.githubusercontent.com/Benvie/Mouse/master/Mouse.js
@@ -294,6 +300,10 @@
 
       create_log();
     });
+
+    //m.on('leave', function(e){
+    //  console.log('mouse left window');
+    //});
   });
 
   loadScript('https://cdn.rawgit.com/keithamus/jwerty/master/jwerty.js', function(){
